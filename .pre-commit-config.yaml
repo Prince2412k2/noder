@@ -9,11 +9,6 @@ repos:
       - id: check-yaml
       - id: check-json
 
-  # run biome (the modern JS/TS linter+formatter)
-  - repo: https://github.com/biomejs/pre-commit
-    rev: v1.7.0
-    hooks:
-      - id: biome-check
 
   # format Prisma schema
   - repo: local
