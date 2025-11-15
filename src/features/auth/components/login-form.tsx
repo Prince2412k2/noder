@@ -33,6 +33,13 @@ const loginSchema = z.object({
 
 type LoginFormValues = z.infer<typeof loginSchema>;
 
+/**
+ * Render a login form with client-side validation and submission handling.
+ *
+ * The form validates email and password using the configured Zod schema, submits credentials to the authentication client, navigates to the home page on successful sign-in, and displays an error toast on failure. The UI includes email and password inputs, disabled submit and social buttons while submitting, and a link to the signup page.
+ *
+ * @returns The JSX element for the login form component
+ */
 export function LoginForm() {
   const router = useRouter();
 

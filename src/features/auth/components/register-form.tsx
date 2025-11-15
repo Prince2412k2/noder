@@ -39,6 +39,16 @@ const registerSchema = z
 
 type RegisterFormValues = z.infer<typeof registerSchema>;
 
+/**
+ * Render the registration form and handle email/password sign-up with client-side validation.
+ *
+ * The component provides email, password, and confirm-password fields validated by the Zod schema,
+ * buttons to continue with GitHub/Google (UI only), and a submit flow that calls the authentication
+ * client's email sign-up. On successful sign-up the router navigates to "/", and on error a toast
+ * displays the received message. Form inputs and buttons are disabled while submission is pending.
+ *
+ * @returns A React element that renders the registration form and its controls.
+ */
 export function RegisterForm() {
   const router = useRouter();
 
