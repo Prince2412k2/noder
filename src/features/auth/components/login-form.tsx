@@ -18,7 +18,6 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { authClient } from "@/lib/auth-client";
-import { cn } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
 import Link from "next/link";
@@ -148,9 +147,6 @@ export function LoginForm() {
           </Form>
         </CardContent>
       </Card>
-      <Button type="button" onClick={() => authClient.signOut()}>
-        signOut
-      </Button>
     </div>
   );
 }
