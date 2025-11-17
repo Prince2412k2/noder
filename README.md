@@ -1,9 +1,9 @@
 
 # Payment
 
-- [ ] Setup Polar
-- [ ] Integrate with BetterAuth
-- [ ] Create Checkout
-- [ ] Create billing portal
+- [ x] Setup Polar
+- [ x ] Integrate with BetterAuth
+- [ x ] Create Checkout
+- [ x ] Create billing portal
 
 
