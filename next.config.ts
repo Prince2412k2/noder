@@ -1,9 +1,13 @@
-import {withSentryConfig} from "@sentry/nextjs";
+import { withSentryConfig } from "@sentry/nextjs";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  devIndicators: false,
   eslint: { ignoreDuringBuilds: true },
   typescript: { ignoreBuildErrors: true },
+  async redirects() {
+    return [{ source: "/", destination: "/workflows", permanent: false }];
+  },
 };
 
 export default withSentryConfig(nextConfig, {
