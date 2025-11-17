@@ -17,6 +17,10 @@ export default function Home() {
       onSuccess: () => {
         toast.success("Ai job Queued");
       },
+
+      onError: () => {
+        toast.error("lol");
+      },
     }),
   );
 
