@@ -1,9 +1,10 @@
 
 # Workflows Crud
 
-- [x] Update Workflows schema
-- [x] Implement CRUD for Workflow
-  - [x] Create
-  - [x] Read
-  - [x] Update
-  - [x] Delete
+- [x] Update `getMany` procedure
+- [x] Add NUQS for params handling
+  - [x] Client side
+  - [x] Server side
+- [x] add entity components
+- [x] add ui for pagination
+- [x] add ui for search
