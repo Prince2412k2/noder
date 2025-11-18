@@ -1,9 +1,9 @@
 
-# Payment
+# Workflows Crud
 
-- [ x] Setup Polar
-- [ x ] Integrate with BetterAuth
-- [ x ] Create Checkout
-- [ x ] Create billing portal
-
-
+- [x] Update Workflows schema
+- [x] Implement CRUD for Workflow
+  - [x] Create
+  - [x] Read
+  - [x] Update
+  - [x] Delete
