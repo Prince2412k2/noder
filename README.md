@@ -5,6 +5,6 @@
 - [x] Add NUQS for params handling
   - [x] Client side
   - [x] Server side
-- [] add entity components
-- [] add ui for pagination
-- [] add ui for search
+- [x] add entity components
+- [x] add ui for pagination
+- [x] add ui for search
