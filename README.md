@@ -1,8 +1,13 @@
 # Workflows UI
 
-- [x] Create UI components
+- [x] Load Workflow page by Id
+  - [x] Prefetch
+  - [x] `useSuspenseQuery`
   - [x] Loading
   - [x] Error
-  - [x] Empty
-  - [x] List
-  - [x] Item
+
+- [x] Create `WorkflowHeader` component
+  - [x] Update workflow name
+
+- [ ] Create `Editor` component
+  - [ ] React-flow
