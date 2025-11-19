@@ -1,10 +1,8 @@
+# Workflows UI
 
-# Workflows Crud
-
-- [x] Update `getMany` procedure
-- [x] Add NUQS for params handling
-  - [x] Client side
-  - [x] Server side
-- [x] add entity components
-- [x] add ui for pagination
-- [x] add ui for search
+- [x] Create UI components
+  - [x] Loading
+  - [x] Error
+  - [x] Empty
+  - [x] List
+  - [x] Item
