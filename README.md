@@ -1,9 +1,8 @@
-
 # Workflows UI
 
-- [ ] Create UI components
+- [x] Create UI components
   - [x] Loading
   - [x] Error
   - [x] Empty
-  - [ ] List
-  - [ ] Item
+  - [x] List
+  - [x] Item

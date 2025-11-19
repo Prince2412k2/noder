@@ -244,19 +244,23 @@ interface EntityItemProps {
 };
 
 export const EntityItem = ({ href, title, subtitle, image, actions, onRemove, isRemoving, className, }: EntityItemProps) => {
+
   const handleRemove = async (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     if (isRemoving) {
       return;
     }
+    if (onRemove) {
+      await onRemove();
+    }
   }
   return (
     <Link href={href}>
       <Card
-        className={cn("p-4 shadow-none hover:shadow cursor-pointer", isRemoving && "opacity-5 cursor-not-allowed", className)}
+        className={cn("p-4 shadow-none hover:shadow cursor-pointer", isRemoving && "opacity-70 cursor-not-allowed", className)}
       >
-        <CardContent className="flex flex-row items-center justify-center justify-between p-0">
+        <CardContent className="flex flex-row items-center justify-between p-0">
           <div className="flex items-center gap-3">
             {image}
             <div>
