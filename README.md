@@ -1,13 +1,11 @@
 # Workflows UI
 
-- [x] Load Workflow page by Id
-  - [x] Prefetch
-  - [x] `useSuspenseQuery`
-  - [x] Loading
-  - [x] Error
+- [x] Create `Editor` component
+  - [x] React-flow
+  - [x] Add initial nodes
 
-- [x] Create `WorkflowHeader` component
-  - [x] Update workflow name
+- [x] Update schema
+  - [x] add `Node` table
+  - [x] add `Connection` table
 
-- [ ] Create `Editor` component
-  - [ ] React-flow
+- [x] Load default editor state
