@@ -1,7 +1,9 @@
 # Node Selector
 
-- [x] Add `manual trigger` node
-- [x] Add `http request` node
-- [x] Create node selector component
-- [x] add editor state
-- [x] enable editor save functionality
+- [x] bug fixes
+  - [x] Empty `onClicks`
+  - [x] type casts
+
+- [x] Add save functionality
+- [x] Add delete functionality
+- [ ] Add settings functionality

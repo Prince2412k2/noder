@@ -1,9 +1,10 @@
 "use client"
 
 import { BaseExecutionNode } from "../base-execution-node"
-import type { Node, NodeProps } from "@xyflow/react"
+import { useReactFlow, type Node, type NodeProps } from "@xyflow/react"
 import { GlobeIcon } from "lucide-react"
-import { memo } from "react"
+import { memo, useEffect, useState } from "react"
+import { FormType, HttpRequestDialog } from "./dialog"
 
 type HttpRequestsNodeData = {
   endpoint?: string;
@@ -15,20 +16,56 @@ type HttpRequestsNodeData = {
 type HttpRequestsNodeType = Node<HttpRequestsNodeData>;
 
 export const HttpRequestsNode = memo((props: NodeProps<HttpRequestsNodeType>) => {
-  const nodeData = props.data as HttpRequestsNodeData;
+  const [dialogOpen, setDialogOpen] = useState(false);
+
+
+  const { setNodes } = useReactFlow();
+  const nodeStatus = "initial";
+
+  const handleOpenSettings = () => setDialogOpen(true);
+
+  const handlSubmit = (values: FormType) => {
+
+    setNodes((nodes) => nodes.map((node) => {
+      if (node.id === props.id) {
+        return {
+          ...node,
+          data: {
+            ...node.data,
+            endpoint: values.endpoint,
+            method: values.method,
+            body: values.body
+          }
+        }
+      }
+      return node
+    }))
+  };
+
+
+  const nodeData = props.data;
   const description = nodeData?.endpoint
     ? `${nodeData.method || "GET"} : ${nodeData.endpoint}` : "Not configured";
-
   return (
     <>
+
+      <HttpRequestDialog
+        open={dialogOpen}
+        onOpenChange={setDialogOpen}
+        onSubmit={handlSubmit}
+        defaultEndpoint={nodeData.endpoint} //TODO: just add initial values
+        defaultMethod={nodeData.method}
+        defaultBody={nodeData.body}
+      />
       <BaseExecutionNode
         {...props}
         id={props.id}
         icon={GlobeIcon}
         name="HTTP Request"
+        status={nodeStatus}
         description={description}
-        onSesttings={() => { }}
-        onDoubleClick={() => { }} />
+        onSesttings={handleOpenSettings}
+        onDoubleClick={handleOpenSettings} />
     </>
   )
 })
