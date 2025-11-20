@@ -15,7 +15,7 @@ interface BaseTriggerNodeProps extends NodeProps {
   name: string;
   description?: string;
   children?: ReactNode;
-  onSesttings?: () => void;
+  onSettings?: () => void;
   onDoubleClick?: () => void;
 }
 export const BaseTriggerNode = memo(({
@@ -24,7 +24,7 @@ export const BaseTriggerNode = memo(({
   name,
   description,
   children,
-  onSesttings,
+  onSettings,
   onDoubleClick,
 
 }: BaseTriggerNodeProps) => {
@@ -35,7 +35,7 @@ export const BaseTriggerNode = memo(({
       name={name}
       description={description}
       onDelete={handleDelete}
-      onSettings={onSesttings}
+      onSettings={onSettings}
     >
       {/* TODO: Wrap within NodestatusIndicator */}
       <BaseNode className="rounded-l-2xl relative group" onDoubleClick={onDoubleClick}>
