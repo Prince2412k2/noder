@@ -1,13 +1,7 @@
-# Workflows UI
+# Node Selector
 
-- [x] Create `Editor` component
-  - [x] React-flow
-  - [x] Add initial nodes
-
-- [x] Update schema
-  - [x] add `Node` table
-  - [x] add `Connection` table
-
-- [x] Load default editor state
-
-10:28:24
+- [x] Add `manual trigger` node
+- [x] Add `http request` node
+- [x] Create node selector component
+- [x] add editor state
+- [x] enable editor save functionality
