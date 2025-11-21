@@ -4,13 +4,12 @@ import { BaseExecutionNode } from "../base-execution-node"
 import { useReactFlow, type Node, type NodeProps } from "@xyflow/react"
 import { GlobeIcon } from "lucide-react"
 import { memo, useEffect, useState } from "react"
-import { FormType, HttpRequestDialog } from "./dialog"
+import { HttpRequestFormValues, HttpRequestDialog } from "./dialog"
 
 type HttpRequestsNodeData = {
   endpoint?: string;
   method?: "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
   body?: string;
-  [key: string]: unknown;
 }
 
 type HttpRequestsNodeType = Node<HttpRequestsNodeData>;
@@ -24,7 +23,7 @@ export const HttpRequestsNode = memo((props: NodeProps<HttpRequestsNodeType>) =>
 
   const handleOpenSettings = () => setDialogOpen(true);
 
-  const handlSubmit = (values: FormType) => {
+  const handlSubmit = (values: HttpRequestFormValues) => {
 
     setNodes((nodes) => nodes.map((node) => {
       if (node.id === props.id) {
@@ -32,9 +31,7 @@ export const HttpRequestsNode = memo((props: NodeProps<HttpRequestsNodeType>) =>
           ...node,
           data: {
             ...node.data,
-            endpoint: values.endpoint,
-            method: values.method,
-            body: values.body
+            ...values
           }
         }
       }

@@ -43,31 +43,28 @@ const formSchema = z.object({
   body: z.string().optional() // TODO: JSON5 .refine()
 });
 
-export type FormType = z.infer<typeof formSchema>
+export type HttpRequestFormValues = z.infer<typeof formSchema>
+
 interface Props {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  onSubmit: (values: FormType) => void;
-  defaultEndpoint?: string;
-  defaultMethod?: "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
-  defaultBody?: string;
+  onSubmit: (values: HttpRequestFormValues) => void;
+  defaultValues?: Partial<HttpRequestFormValues>
 };
 
 export const HttpRequestDialog = ({
   open,
   onOpenChange,
   onSubmit,
-  defaultEndpoint = "",
-  defaultMethod = "GET",
-  defaultBody = "",
+  defaultValues
 }: Props) => {
 
-  const form = useForm<FormType>({
+  const form = useForm<HttpRequestFormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      endpoint: defaultEndpoint,
-      method: defaultMethod,
-      body: defaultBody,
+      endpoint: defaultValues?.endpoint || "",
+      method: defaultValues || "GET",
+      body: defaultValues || "",
 
     }
   })
@@ -86,7 +83,7 @@ export const HttpRequestDialog = ({
   const watchMethod = form.watch("method");
   const showBodyField = ["POST", "PUT", "PATCH"].includes(watchMethod)
 
-  const handleSubmit = (values: FormType) => {
+  const handleSubmit = (values: HttpRequestFormValues) => {
     onSubmit(values);
     onOpenChange(false);
   };
