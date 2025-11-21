@@ -1,9 +1,8 @@
-# Node Selector
+# Node Execution
 
-- [x] bug fixes
-  - [x] Empty `onClicks`
-  - [x] type casts
+- [ ] Improve props for dialog
 
-- [x] Add save functionality
-- [x] Add delete functionality
-- [x] Add settings functionality
+- [ ] Show "execution" button
+- [ ] Create "execution" `Inngest` function
+- [ ] Topological sort
+- [ ] Create executor registry
