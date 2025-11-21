@@ -6,4 +6,4 @@
 
 - [x] Add save functionality
 - [x] Add delete functionality
-- [ ] Add settings functionality
+- [x] Add settings functionality
